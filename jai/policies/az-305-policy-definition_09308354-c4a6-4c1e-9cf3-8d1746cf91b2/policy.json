@@ -1,0 +1,38 @@
+{
+ "properties": {
+  "displayName": "az-305-policy-definition",
+  "policyType": "Custom",
+  "mode": "All",
+  "metadata": {
+   "category": "Compute",
+   "createdBy": "5142a43c-3fcc-433c-8c2e-2c09f79a6313",
+   "createdOn": "2022-07-12T06:56:42.4294606Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "allowedLocations": {
+    "type": "Array",
+    "metadata": {
+     "displayName": "Allowed locations",
+     "description": "The list of allowed locations for resources.",
+     "strongType": "location"
+    }
+   }
+  },
+  "policyRule": {
+   "if": {
+    "not": {
+     "field": "location",
+     "in": "[parameters('allowedLocations')]"
+    }
+   },
+   "then": {
+    "effect": "audit"
+   }
+  }
+ },
+ "id": "/subscriptions/dfd38ea8-0e1e-4738-a464-3201f229cc46/providers/Microsoft.Authorization/policyDefinitions/09308354-c4a6-4c1e-9cf3-8d1746cf91b2",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "09308354-c4a6-4c1e-9cf3-8d1746cf91b2"
+}
